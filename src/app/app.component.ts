@@ -10,6 +10,10 @@ import { Customer } from "./customer.interface";
 export class AppComponent implements OnInit {
   public myForm: FormGroup;
 
+  data = {
+    message: "success"
+  };
+
   constructor(private _fb: FormBuilder) {}
 
   ngOnInit() {
@@ -30,7 +34,8 @@ export class AppComponent implements OnInit {
   initAddress() {
     return this._fb.group({
       street: ["", Validators.required],
-      postcode: [""]
+      postcode: [""],
+      jsonEditor: [this.data]
     });
   }
 
